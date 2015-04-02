@@ -6,19 +6,17 @@ require 'terminal-table'
 require "bilisim_sozlugu/version"
 
 module BilisimSozlugu
-  URL = "http://www.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama="
+  URL = "http://www.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama=".freeze
+  CSS_SELECTOR = "table tbody tr".freeze
 
   def self.search(word)
-    words = []
     call_url = URL + word
     page = Nokogiri::HTML(open(call_url))
-    rows = page.css("table").css('tbody').css('tr')
+    rows = page.css(CSS_SELECTOR)
     if rows.last.text == "Aranan Kelime "
       puts "Aradığınız kelime bulunamadı."
     else
-      rows.each do |row|
-        words << [row.children.first.children.text, row.children.last.text]
-      end
+      words = rows.map { |row| [row.children.first.children.text, row.children.last.text] }
       table = Terminal::Table.new :rows => words.drop(2)
       puts table
     end    
