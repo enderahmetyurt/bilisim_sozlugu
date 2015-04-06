@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'bilisim_sozlugu'
+
+if ARGV.empty?
+	puts "Lütfen geçerli bir komut giriniz."
+else
+	puts "Lütfen bekleyiniz...\n"
+	BilisimSozlugu.search(ARGV[0])
+end
