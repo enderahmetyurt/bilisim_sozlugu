@@ -20,9 +20,7 @@ Or install it yourself as:
 ## Usage
 
 ```
-
-$ require 'bilisim_sozlugu'
-$ BilisimSozlugu.search('memory')
+$ sozluk memory
 
 # +---------------------------+-----------------------------+
 # | belleği derleyip toplama  | memory compaction           |
