@@ -6,7 +6,7 @@ require 'terminal-table'
 require "bilisim_sozlugu/version"
 
 module BilisimSozlugu
-  URL = "http://www.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama=".freeze
+  URL          = "http://eski.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama=".freeze
   CSS_SELECTOR = "table tbody tr".freeze
 
   def self.search(word)
