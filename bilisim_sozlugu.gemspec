@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BilisimSozlugu::VERSION
   spec.authors       = ["Ender Ahmet Yurt"]
   spec.email         = ["enderyurt@gmail.com"]
-  spec.summary       = "Translate the word from English to Turkish."
-  spec.description   = "Translating English words which are used in computer world to Turkish from Informatics Association of Turkey offical website."
+  spec.summary       = "Translate Computer Terms from English to Turkish."
+  spec.description   = "Translating English terms related to Computer Sciences to Turkish from Informatics Association of Turkey's offical website."
   spec.homepage      = ""
   spec.license       = "MIT"
 
