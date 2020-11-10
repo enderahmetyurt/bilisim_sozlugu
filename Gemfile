@@ -6,4 +6,7 @@ gemspec
 group :development, :test do
   gem 'pry', '~> 0.9.12'
   gem 'rspec', '>= 2.14'
+  gem 'sorbet'
 end
+
+gem 'sorbet-runtime'
