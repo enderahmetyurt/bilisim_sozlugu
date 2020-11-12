@@ -1,15 +1,21 @@
+# typed: true
+
 require "rubygems"
 require "open-uri"
 require "nokogiri"
 require 'terminal-table'
+require "sorbet-runtime"
 require "bilisim_sozlugu/version"
 
 module BilisimSozlugu
-  URL          = "http://eski.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama=".freeze
-  CSS_SELECTOR = "table tbody tr".freeze
+  extend T::Sig
 
+  URL          = T.let("http://eski.tbd.org.tr/index.php?sayfa=sozluk&mi1&tipi=ara&harf=A&arama=".freeze, String)
+  CSS_SELECTOR = T.let("table tbody tr".freeze, String)
+
+  sig {params(word: String).void}
   def self.search(word)
-    call_url = URL + word
+    call_url = T.let(URL + word, String)
     page     = Nokogiri::HTML(open(call_url))
     rows     = page.css(CSS_SELECTOR)
 
