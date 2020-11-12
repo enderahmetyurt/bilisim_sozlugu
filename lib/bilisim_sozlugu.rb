@@ -4,6 +4,7 @@ require "rubygems"
 require "open-uri"
 require "nokogiri"
 require 'terminal-table'
+require "sorbet-runtime"
 require "bilisim_sozlugu/version"
 
 module BilisimSozlugu
